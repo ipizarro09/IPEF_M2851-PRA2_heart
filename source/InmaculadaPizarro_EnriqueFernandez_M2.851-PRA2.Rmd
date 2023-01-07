@@ -27,9 +27,8 @@ knitr::opts_chunk$set(echo = TRUE)
 En el siguiente ejercicio nos disponemos a analizar el conjunto de datos sugerido para la PRA2 de tipología y ciencia de vida del dato sobre ataques de corazón y variables asociadas a cada muestra. 
 
 El conjunto de datos objeto de análisis se ha obtenido a partir de este enlace en Kaggle:
-[Kaggle dataset sobre ataques de corazón](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
+[Kaggle dataset sobre ataques de corazón](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset) y está constituido por 14 características (columnas) que presentan 303 pacientes (filas o registros).
 
-y está constituido por 14 características (columnas) que presentan 303 pacientes (filas o registros).
 Entre los campos de este conjunto de datos, encontramos los siguientes:
 
 + **age**             Edad del paciente
@@ -238,7 +237,6 @@ pacientes["rango_edad"] <- cut(pacientes$edad, breaks = c(0,45,55,65,100),
                                labels = c("Grupo1:<=45", "Grupo2:46-55", 
                                          "Grupo3:56-65","Grupo3:>65"))
 table(pacientes$rango_edad)
-
 ```
 
 Los hemos categorizado en los siguientes grupos: Grupo1:<=45, Grupo2:46-55, Grupo3:56-65 y Grupo3:>65.
@@ -518,8 +516,11 @@ Tras haber visto la correlación entre algunas variables numéricas, vamos a ana
 
 ```{r  message= FALSE, warning=FALSE}
 m1 <- lm(presion_arterial~edad,data=pacientes)
+cat("R-squared modelo 1: ",summary(m1)$adj.r.squared)
 m2 <- lm(frecuencia_cardiaca~edad,data=pacientes)
+cat("R-squared modelo 2: ",summary(m2)$adj.r.squared)
 m3 <- lm(presion_arterial~frecuencia_cardiaca,data=pacientes)
+cat("R-squared modelo 3: ",summary(m3)$adj.r.squared)
 ```
 
 Siendo el coeficiente de determinación (R-squared) una medida de calidad del modelo que toma valores entre 0 y 1, se comprueba cómo se correlacionan muy débilmente las variables seleccionadas, y en el caso de presion_arterial y frecuencia_cardiaca la correlación es negativa.
@@ -529,6 +530,7 @@ Podemos usar la regresión logística para analizar la regresión usando la vari
 ```{r  message= FALSE, warning=FALSE}
 m4<- glm(posibilidad_infarto ~ colesterol+presion_arterial,data=pacientes, 
          family="binomial")
+cat("AIC para modelo 4: ",m4$aic)
 ```
 
 Este modelo nos proporciona un AIC (criterio de información de Akaike) de 415.8.  Probemos introduciendo la edad.
@@ -536,7 +538,7 @@ Este modelo nos proporciona un AIC (criterio de información de Akaike) de 415.8
 ```{r  message= FALSE, warning=FALSE}
 m5 <- glm(posibilidad_infarto ~ colesterol+presion_arterial+edad,data=pacientes, 
          family="binomial")
-summary(m5)
+cat("AIC para modelo 5: ",m5$aic)
 ```
 
 Este modelo nos proporciona un AIC (criterio de información de Akaike) de 407.25. Por lo que el modelo anterior (m4) es mejor.

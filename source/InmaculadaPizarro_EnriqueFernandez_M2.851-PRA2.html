@@ -448,10 +448,11 @@ datos sugerido para la PRA2 de tipología y ciencia de vida del dato
 sobre ataques de corazón y variables asociadas a cada muestra.</p>
 <p>El conjunto de datos objeto de análisis se ha obtenido a partir de
 este enlace en Kaggle: <a href="https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset">Kaggle
-dataset sobre ataques de corazón</a></p>
-<p>y está constituido por 14 características (columnas) que presentan
-303 pacientes (filas o registros). Entre los campos de este conjunto de
-datos, encontramos los siguientes:</p>
+dataset sobre ataques de corazón</a> y está constituido por 14
+características (columnas) que presentan 303 pacientes (filas o
+registros).</p>
+<p>Entre los campos de este conjunto de datos, encontramos los
+siguientes:</p>
 <ul>
 <li><strong>age</strong> Edad del paciente</li>
 <li><strong>sex</strong> Sexo del paciente
@@ -1184,8 +1185,14 @@ vamos a analizar con un modelo de regresión lineal la relación entre
 alguna de ellas: presión arterial y edad, y entre edad y frecuencia
 cardiáca, así como entre frecuencia cardiaca y presión arterial.</p>
 <pre class="r"><code>m1 &lt;- lm(presion_arterial~edad,data=pacientes)
-m2 &lt;- lm(frecuencia_cardiaca~edad,data=pacientes)
-m3 &lt;- lm(presion_arterial~frecuencia_cardiaca,data=pacientes)</code></pre>
+cat(&quot;R-squared modelo 1: &quot;,summary(m1)$adj.r.squared)</code></pre>
+<pre><code>## R-squared modelo 1:  0.07497393</code></pre>
+<pre class="r"><code>m2 &lt;- lm(frecuencia_cardiaca~edad,data=pacientes)
+cat(&quot;R-squared modelo 2: &quot;,summary(m2)$adj.r.squared)</code></pre>
+<pre><code>## R-squared modelo 2:  0.1560251</code></pre>
+<pre class="r"><code>m3 &lt;- lm(presion_arterial~frecuencia_cardiaca,data=pacientes)
+cat(&quot;R-squared modelo 3: &quot;,summary(m3)$adj.r.squared)</code></pre>
+<pre><code>## R-squared modelo 3:  -0.001134337</code></pre>
 <p>Siendo el coeficiente de determinación (R-squared) una medida de
 calidad del modelo que toma valores entre 0 y 1, se comprueba cómo se
 correlacionan muy débilmente las variables seleccionadas, y en el caso
@@ -1195,37 +1202,15 @@ negativa.</p>
 la variable dicotómica posibilidad_infarto en función de las demás
 variables predicatoras.</p>
 <pre class="r"><code>m4&lt;- glm(posibilidad_infarto ~ colesterol+presion_arterial,data=pacientes, 
-         family=&quot;binomial&quot;)</code></pre>
+         family=&quot;binomial&quot;)
+cat(&quot;AIC para modelo 4: &quot;,m4$aic)</code></pre>
+<pre><code>## AIC para modelo 4:  415.7983</code></pre>
 <p>Este modelo nos proporciona un AIC (criterio de información de
 Akaike) de 415.8. Probemos introduciendo la edad.</p>
 <pre class="r"><code>m5 &lt;- glm(posibilidad_infarto ~ colesterol+presion_arterial+edad,data=pacientes, 
          family=&quot;binomial&quot;)
-summary(m5)</code></pre>
-<pre><code>## 
-## Call:
-## glm(formula = posibilidad_infarto ~ colesterol + presion_arterial + 
-##     edad, family = &quot;binomial&quot;, data = pacientes)
-## 
-## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.7357  -1.1502   0.7949   1.0571   1.5904  
-## 
-## Coefficients:
-##                   Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept)       4.354296   1.132266   3.846  0.00012 ***
-## colesterol       -0.001378   0.002353  -0.585  0.55825    
-## presion_arterial -0.010324   0.007106  -1.453  0.14626    
-## edad             -0.045344   0.014281  -3.175  0.00150 ** 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 417.64  on 302  degrees of freedom
-## Residual deviance: 399.25  on 299  degrees of freedom
-## AIC: 407.25
-## 
-## Number of Fisher Scoring iterations: 4</code></pre>
+cat(&quot;AIC para modelo 5: &quot;,m5$aic)</code></pre>
+<pre><code>## AIC para modelo 5:  407.2541</code></pre>
 <p>Este modelo nos proporciona un AIC (criterio de información de
 Akaike) de 407.25. Por lo que el modelo anterior (m4) es mejor.</p>
 <p>Vamos a usarlo para intentar predecir la variable posibilidad_infarto
