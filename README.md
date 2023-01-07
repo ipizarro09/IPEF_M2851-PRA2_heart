@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Práctica 2: Limpieza y validación de los datos - TIPOLOGIA Y CICLO DE LA VIDA DEL DATO - M2.851
 
@@ -30,3 +31,7 @@ Para la ejecución del fichero .Rmd es necesario tener instalado R y RStudio.
 5. Data science concepts you need to know! Part 1: <https://towardsdatascience.com/introduction-to-statistics-e9d72d818745>
 6. Estadística Fácil con Ana Leon Vega - Videos Gratuitos: https://www.youtube.com/watch?v=Gm_9Z7nufUE
 7. Creating and customising pdf documents with rmarkdown: http://www.introductoryr.co.uk/Reproducibility/book/creating-and-customising-pdf-documents.html
+=======
+# IPEF_M2851-PRA2_heart
+Tipología y ciclo de vida del dato (Master de Ciencias del Dato, UOC) - PRA2 - Sobre dataset heart-attack-analysis-prediction de kaggle
+>>>>>>> 156912a9164413b44b0187a0d6d8fcb66ff024e6
