@@ -565,14 +565,14 @@ Para ello primero hemos ralizado tareas de limpieza de datos, tales como convert
 
 A continuación hemos realizado un análisis estadístico descriptivo, donde las conclusiones han sido las siguientes: Hay mayor posibilidad de infarto en mujeres y en pacientes con dolores que no son de angina o las anginas atípica con respecto a los otros. El azúcar no tiene importancia significativa en el riesgo de infarto.  Otros indicios de posibilidad de infarto alta son: tener anomalías en la onda ST-T en el electrocardiograma, las anginas de origen distinto al ejercicio,  una pendiente ascendiente y una prueba de esfuerzo con talio ~ (0,3) normal.
 
-También hemos realizado un análisis estadístico inferencial, y hemos podido comprobar que ninguna de las variables numéricas ha pasado el test de distribución normal ni homocedasticidad, por ello los test analíticos realizados han sido no paramétricos. 
+También hemos realizado un análisis estadístico inferencial, y hemos podido comprobar que ninguna de las variables numéricas ha pasado el test de distribución normal, en cuanto a homocedasticidad sólo tenemos en presión arterial y colesterol, por ello los test analíticos realizados han sido no paramétricos. 
 
 Para finalizar, hemos realizado tres tipos de pruebas estadísticas al conjunto de datos para poder conocer nuestras muestras, saber cuanta información proveen con respecto a la población.  
 
 Las pruebas han sido buscar correlación de variables, el contraste de distintas hipótesis (diferencias estadísticamente significativas entre grupos o variables) y generar un modelo de regresión para predecir si un paciente tiene riesgo a tener un infarto. Las conclusiones que hemos sacado en base a los resultados obtenidos han sido las siguientes:
 
 * El análisis de correlación y la regresión lineal nos ha permitido averiguar que no hay correlación fuerte entre las variables ni con la variable objetivo.  
-* El contraste de hipótesis nos ha permitido conocer que, menos la variable de nivel de azucar en sangre, con todas las variables rechazaríamos la hipótesis nula. Dicho de otro modo, estas variables ejercen una mayor influencia sobre la posibilidad de infarto.  
+* El contraste de hipótesis nos ha permitido conocer que, menos la variable de nivel de azúcar en sangre, con todas las variables rechazaríamos la hipótesis nula. Dicho de otro modo, estas variables ejercen una mayor influencia sobre la posibilidad de infarto que el azúcar.  
 * El modelo de regresión logística obtenido parece no tener calidad aunque hemos podido utilizarlo para predecir la posibilidad de infarto en un nuevo paciente.
 
 ```{r table2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
