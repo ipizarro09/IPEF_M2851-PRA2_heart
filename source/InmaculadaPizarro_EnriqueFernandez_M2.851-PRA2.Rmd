@@ -3,10 +3,6 @@ title: 'Tipología y Ciclo de vida del Dato: Práctica 2: Limpieza y validación
 author: "Autores: Inmaculada Pizarro Moreno y Enrique Fernández Morales"
 date: "Enero 2023"
 output:
-  pdf_document:
-    highlight: zenburn
-    toc: yes
-  word_document: default
   html_document:
     highlight: default
     number_sections: yes
@@ -15,6 +11,10 @@ output:
     toc_depth: 2
     includes:
       in_header: M2.851-PRA2-header.html
+  word_document: default
+  pdf_document:
+    highlight: zenburn
+    toc: yes
 geometry: margin=20mm
 ---
 
@@ -392,7 +392,7 @@ for (i in 1:ncol(pacientes)) {
   if (is.integer(pacientes[,i]) | is.numeric(pacientes[,i])) {
     p_val = ad.test(pacientes[,i])$p.value
     if (p_val < alpha) {
-      cat(col.names[i]," con p-value:", p_val)
+      cat("\n",col.names[i]," con p-value:", p_val)
       # Format output
       if (i < ncol(pacientes) - 1) cat(", ")
       if (i %% 3 == 0) cat("\n")

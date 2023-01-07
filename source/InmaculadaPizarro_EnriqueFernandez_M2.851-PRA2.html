@@ -544,7 +544,7 @@ población de pacientes de corazón.</p>
 datos</h1>
 <p>El primer paso es cargar los datos para trabajar con ellos haciendo
 uso de la función read.csv de la librería readr.</p>
-<pre class="r"><code>pacientes &lt;- read.csv(&#39;dataset/heart.csv&#39;, header = TRUE, sep = &#39;,&#39;)</code></pre>
+<pre class="r"><code>pacientes &lt;- read.csv(&#39;../dataset/heart.csv&#39;, header = TRUE, sep = &#39;,&#39;)</code></pre>
 <p>Vemos qué clase tiene cada variable usando la función sapply que nos
 permite aplicar la función class sobre todo data frame.</p>
 <pre class="r"><code># Tipo de dato asignado a cada campo
@@ -750,7 +750,7 @@ datos preprocesados</h2>
 procedimientos de integración, validación y limpieza anteriores,
 procedemos a guardar estos en un nuevo fichero denominado
 heart_clean.csv.csv:</p>
-<pre class="r"><code>write.csv(pacientes, &quot;dataset/heart_clean.csv&quot;)</code></pre>
+<pre class="r"><code>write.csv(pacientes, &quot;../dataset/heart_clean.csv&quot;)</code></pre>
 </div>
 </div>
 <div id="análisis-de-los-datos" class="section level1" number="4">
@@ -961,7 +961,7 @@ for (i in 1:ncol(pacientes)) {
   if (is.integer(pacientes[,i]) | is.numeric(pacientes[,i])) {
     p_val = ad.test(pacientes[,i])$p.value
     if (p_val &lt; alpha) {
-      cat(col.names[i],&quot; con p-value:&quot;, p_val)
+      cat(&quot;\n&quot;,col.names[i],&quot; con p-value:&quot;, p_val)
       # Format output
       if (i &lt; ncol(pacientes) - 1) cat(&quot;, &quot;)
       if (i %% 3 == 0) cat(&quot;\n&quot;)
@@ -969,7 +969,12 @@ for (i in 1:ncol(pacientes)) {
   }
   }</code></pre>
 <pre><code>## Variables que no siguen una distribución normal:
-## edad  con p-value: 0.0006570291, presion_arterial  con p-value: 1.672518e-06, colesterol  con p-value: 0.0001977844, frecuencia_cardiaca  con p-value: 6.940807e-06, pico_anterior  con p-value: 3.7e-24,</code></pre>
+## 
+##  edad  con p-value: 0.0006570291, 
+##  presion_arterial  con p-value: 1.672518e-06, 
+##  colesterol  con p-value: 0.0001977844, 
+##  frecuencia_cardiaca  con p-value: 6.940807e-06, 
+##  pico_anterior  con p-value: 3.7e-24,</code></pre>
 <p>Ahora vamos a estudiar la homogeneidad de varianzas o
 <strong>homocedasticidad</strong> mediante la aplicación del test
 <strong>Fligner-Killeen</strong> ya que como hemos comprobado los datos
