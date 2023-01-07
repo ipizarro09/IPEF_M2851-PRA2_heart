@@ -104,7 +104,7 @@ if (!require('nortest')) install.packages('nortest'); library('nortest')
 ```
 
 ```{r message= FALSE, warning=FALSE}
-pacientes <- read.csv('dataset/heart.csv', header = TRUE, sep = ',')
+pacientes <- read.csv('../dataset/heart.csv', header = TRUE, sep = ',')
 ```
 
 Vemos qué clase tiene cada variable usando la función sapply que nos permite aplicar la función class sobre todo data frame.
@@ -248,7 +248,7 @@ Los hemos categorizado en los siguientes grupos: Grupo1:<=45, Grupo2:46-55, Grup
 Una vez que hemos acometido sobre el conjunto de datos inicial los procedimientos de integración, validación y limpieza anteriores, procedemos a guardar estos en un nuevo fichero denominado heart_clean.csv.csv:
 
 ```{r  message= FALSE, warning=FALSE}
-write.csv(pacientes, "dataset/heart_clean.csv")
+write.csv(pacientes, "../dataset/heart_clean.csv")
 ```
 
 # Análisis de los datos
