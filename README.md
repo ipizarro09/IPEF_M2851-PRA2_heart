@@ -11,12 +11,12 @@ La actividad ha sido realizada de manera conjunta por **Enrique Fernández e Inm
 
 ## Ficheros del código fuente
 
-* **source/InmaculadaPizarro_EnriqueFernandez_M2.851-PRA2.Rmd*: fichero R markup que genera en pdf o html los ficheros resultado donde se visualiza el código junto con las explicaciones del proyecto.
-* **source/InmaculadaPizarro_EnriqueFernandez_M2.851-PRA2.pdf*: fichero pdf de 20 páginas con el resultado de la ejecución del código existente en el fichero anterior y los comentarios de los participantes.
-* **source/InmaculadaPizarro_EnriqueFernandez_M2.851-PRA2.html*: fichero html con el resultado de la ejecución del código existente en el fichero anterior y los comentarios de los participantes.
-* **source/M2.851-PRA2-header.html*: cabecera del Master de la UOC para fichero html.
-* **dataset/heart.csv**: contiene el fichero csv descargado de [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset/).
-* **dataset/heart_clean.csv: contiene el fichero csv resultado de la limpieza y validación de datos
+* *source/InmaculadaPizarro_EnriqueFernandez_M2.851-PRA2.Rmd*: fichero R markup que genera en pdf o html los ficheros resultado donde se visualiza el código junto con las explicaciones del proyecto.
+* *source/InmaculadaPizarro_EnriqueFernandez_M2.851-PRA2.pdf*: fichero pdf de 20 páginas con el resultado de la ejecución del código existente en el fichero anterior y los comentarios de los participantes.
+* *source/InmaculadaPizarro_EnriqueFernandez_M2.851-PRA2.html*: fichero html con el resultado de la ejecución del código existente en el fichero anterior y los comentarios de los participantes.
+* *source/M2.851-PRA2-header.html*: cabecera del Master de la UOC para fichero html.
+* *dataset/heart.csv*: contiene el fichero csv descargado de [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset/).
+* *dataset/heart_clean.csv*: contiene el fichero csv resultado de la limpieza y validación de datos
 
 ## Instalación ##
 
