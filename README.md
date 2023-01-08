@@ -22,6 +22,10 @@ La actividad ha sido realizada de manera conjunta por **Enrique Fernández e Inm
 
 Para la ejecución del fichero .Rmd es necesario tener instalado R y RStudio.
 
+## Video ##
+
+El link al video es el siguiente: _https://drive.google.com/file/d/12x-k0KpmnoaSNDWHRrdWR1k_T6K0vRSf/view?usp=share_link_
+
 ## Recursos
 
 1. Calvo M, Subirats L, Pérez D (2019). Introducción a la limpieza y análisis de los datos. Editorial UOC. 
